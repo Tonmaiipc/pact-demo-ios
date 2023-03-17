@@ -1,0 +1,47 @@
+{
+  "consumer": {
+    "name": "demo-consumer"
+  },
+  "interactions": [
+    {
+      "description": "A request to get a beer list",
+      "providerStates": [
+        {
+          "name": "a beer exist",
+          "params": {
+            "brand": "Heineken"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/v2/beers"
+      },
+      "response": {
+        "body": {
+          "abv": 4.2,
+          "ibu": 55,
+          "image_url": "https://beer.com/name/image.jpg",
+          "name": "BeerName",
+          "tagline": "beer tag line"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pactRust": {
+      "mockserver": "0.9.4",
+      "models": "0.4.5"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pactSwift": {
+      "version": "1.1.0"
+    }
+  },
+  "provider": {
+    "name": "demo-provider"
+  }
+}

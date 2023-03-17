@@ -12,7 +12,7 @@ class BeersViewModel: BaseViewModel {
     var beerList: [BeerResponse]?
 
     override func callService() {
-        ApiManager.shared.retrieveBeers { [weak self] response in
+        ApiManager.shared.retrieveBeers(toURL: "https://api.punkapi.com/v2/beers") { [weak self] response in
             self?.beerList = response
             self?.handleResponse(response: response, success: true)
         } fail: { [weak self] _ in

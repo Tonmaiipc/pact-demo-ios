@@ -39,3 +39,16 @@ class ServiceManager {
         task.resume()
     }
 }
+
+extension String {
+
+    func uppercasedFirst() -> String {
+        let firstLetter = self.prefix(1).capitalized
+        let remainingLetters = self.dropFirst().lowercased()
+        return firstLetter + remainingLetters
+    }
+
+    mutating func first() {
+        self += "hello"
+    }
+}
